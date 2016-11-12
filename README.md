@@ -1,31 +1,24 @@
 # MiniTwit
 
-Dockerized, SpringBoot conversion of [MiniTwit](https://github.com/eh3rrera/minitwit), a Twitter clone using Spark (Java), Spring, Freemarker, and HSQLDB.
-
-New features in karlkfi/minitwit:
-- Spring Boot
-  - Enhanced ServerProperties config (env var, yaml, etc)
-  - Executable jar
-  - Logback logging, instead of slf4j-simple
-- Docker container image
+Extensions of [karlkfi/minitwit](https://github.com/karlkfi/minitwit), a Twitter clone using Spark (Java), Spring, Freemarker, and HSQLDB or MySQL.
 
 ## Prerequisites
 
-- Docker (container image includes all application dependencies)
+- Docker 1.11 or above 
 
 ## Build
 
 1. Clone the repository and go to the root directory.
 
     ```
-    git clone git@github.com:karlkfi/minitwit.git
+    git clone git@github.com:mhausenblas/minitwit.git
     cd minitwit
     ```
 
 1. Build the docker image
 
     ```
-    docker build -t karlkfi/minitwit .
+    docker build -t mhausenblas/minitwit .
     ```
 
 ## Usage
@@ -33,7 +26,7 @@ New features in karlkfi/minitwit:
 1. Run the docker image in the background
 
     ```
-    docker run -d --name minitwit karlkfi/minitwit
+    docker run -d --name minitwit mhausenblas/minitwit
     ```
 
 1. Find the docker container's IP
@@ -108,7 +101,7 @@ SPRING_DATASOURCE_PLATFORM=mysql
 EOF
 
 # start minitwit server
-docker run -d --name minitwit --env-file=minitwit.env karlkfi/minitwit
+docker run -d --name minitwit --env-file=minitwit.env mhausenblas/minitwit
 ```
 
 ##License
